@@ -20,4 +20,14 @@ function guessNumberGame() {
     }
   }
 
-  
+  // EXERCISE 2: Create an array of random numbers
+
+function generateRandomArray(length) {
+  const randomArray = [];
+  for (let i = 0; i < length; i++) {
+    randomArray.push(Math.floor(Math.random() * 100) + 1); // numbers 1–100
+  }
+  return randomArray;
+}
+
+console.log("Random array:", generateRandomArray(5));
