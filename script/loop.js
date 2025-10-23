@@ -31,3 +31,18 @@ function generateRandomArray(length) {
 }
 
 console.log("Random array:", generateRandomArray(5));
+
+
+// EXERCISE 3: Calculate the sum of even numbers in the array
+
+function sumEvenNumbers(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 ===0) {
+      sum += array[i];
+    }
+  }
+  return sum;
+}
+
+console.log("Sum of even numbers:", sumEvenNumbers([79, 64, 99, 23, 5]));
