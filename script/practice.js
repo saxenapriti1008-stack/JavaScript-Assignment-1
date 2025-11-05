@@ -1,6 +1,7 @@
-// Our movie library array
+//  Movie library array
 
 let movieLibrary = [];
+let running = true;
 
 //  Function to add a movie
 
@@ -37,7 +38,7 @@ function listMovies() {
   });
 
   alert(movieList);
-  console.log(movieLibrary); // Optional for debugging
+  
 }
 
 //  Function to mark a movie as watched
@@ -88,4 +89,46 @@ function listUnwatchedMovies() {
   });
 
   alert(list);
+}
+
+//  Main menu loop
+
+while (running) {
+  const choice = prompt(`
+    
+ Movie Tracker Menu
+
+1️⃣ Add a new movie
+2️⃣ List all movies
+3️⃣ Mark a movie as watched
+4️⃣ Remove a movie
+5️⃣ List unwatched movies
+0️⃣ Exit
+
+Enter your choice:
+`);
+
+  switch (choice) {
+    case "1":
+      addMovie();
+      break;
+    case "2":
+      listMovies();
+      break;
+    case "3":
+      markAsWatched();
+      break;
+    case "4":
+      removeMovie();
+      break;
+    case "5":
+      listUnwatchedMovies();
+      break;
+    case "0":
+      alert("Goodbye! ");
+      running = false;
+      break;
+    default:
+      alert("Invalid choice. Please try again!");
+  }
 }
