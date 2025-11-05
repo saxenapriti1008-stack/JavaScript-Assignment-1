@@ -40,3 +40,18 @@ function listMovies() {
   console.log(movieLibrary); // Optional for debugging
 }
 
+//  Function to mark a movie as watched
+
+function markAsWatched() {
+  const title = prompt("Enter the title of the movie to mark as watched:");
+  const movie = movieLibrary.find(
+    (m) => m.title.toLowerCase() === title.toLowerCase()
+  );
+
+  if (movie) {
+    movie.isWatched = true;
+    alert(`"${movie.title}" has been marked as watched!`);
+  } else {
+    alert(`Movie titled "${title}" not found.`);
+  }
+}
