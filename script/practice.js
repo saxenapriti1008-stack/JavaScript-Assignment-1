@@ -55,3 +55,37 @@ function markAsWatched() {
     alert(`Movie titled "${title}" not found.`);
   }
 }
+
+//  BONUS: Function to remove a movie
+
+function removeMovie() {
+  const title = prompt("Enter the title of the movie to remove:");
+  const index = movieLibrary.findIndex(
+    (m) => m.title.toLowerCase() === title.toLowerCase()
+  );
+
+  if (index !== -1) {
+    const removed = movieLibrary.splice(index, 1);
+    alert(`"${removed[0].title}" has been removed from your list.`);
+  } else {
+    alert(`No movie found with the title "${title}".`);
+  }
+}
+
+//  BONUS: List only unwatched movies
+
+function listUnwatchedMovies() {
+  const unwatched = movieLibrary.filter((m) => !m.isWatched);
+
+  if (unwatched.length === 0) {
+    alert("You have no unwatched movies! ");
+    return;
+  }
+
+  let list = " Unwatched Movies:\n\n";
+  unwatched.forEach((movie, index) => {
+    list += `${index + 1}. ${movie.title} by ${movie.director}\n`;
+  });
+
+  alert(list);
+}
