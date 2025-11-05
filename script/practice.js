@@ -95,7 +95,7 @@ function listUnwatchedMovies() {
 
 while (running) {
   const choice = prompt(`
-    
+
  Movie Tracker Menu
 
 1️⃣ Add a new movie
@@ -129,6 +129,7 @@ Enter your choice:
       running = false;
       break;
     default:
+      
       alert("Invalid choice. Please try again!");
   }
 }
